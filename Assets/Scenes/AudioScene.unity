@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4066d4aa46f514049a4009a59c11811e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakableClips: []
+  breakableClips:
+  - {fileID: 8300000, guid: 9ae0ecfce4c45bb40819b46e98457599, type: 3}
+  - {fileID: 8300000, guid: df86abbf98383b0428fd69e425e7bce2, type: 3}
   sliceableClips:
   - {fileID: 8300000, guid: 6a3ad02aed278a940a172c7b80859e55, type: 3}
   - {fileID: 8300000, guid: 88f2e49bb12d2904db6f2460c4cac0de, type: 3}
@@ -1203,7 +1205,9 @@ MonoBehaviour:
   breakableClips:
   - {fileID: 8300000, guid: 6a3ad02aed278a940a172c7b80859e55, type: 3}
   - {fileID: 8300000, guid: 88f2e49bb12d2904db6f2460c4cac0de, type: 3}
-  sliceableClips: []
+  sliceableClips:
+  - {fileID: 8300000, guid: 9ae0ecfce4c45bb40819b46e98457599, type: 3}
+  - {fileID: 8300000, guid: df86abbf98383b0428fd69e425e7bce2, type: 3}
 --- !u!1 &1411028790
 GameObject:
   m_ObjectHideFlags: 0
