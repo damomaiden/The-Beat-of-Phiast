@@ -9,6 +9,7 @@ TagManager:
   - Sliceable
   - Blade
   - Pot
+  - Terrain
   layers:
   - Default
   - TransparentFX

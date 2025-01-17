@@ -44,6 +44,13 @@ public class SliceableScript : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, position, explosionRadius);
             }
 
+            // Disable the colliders on the shattered piece
+            Collider[] colliders = piece.GetComponents<Collider>();
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = false;
+            }
+
             // Schedule the piece to be destroyed after a few seconds
             Destroy(piece, pieceLifetime);
         }

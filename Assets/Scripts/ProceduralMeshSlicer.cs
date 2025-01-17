@@ -31,6 +31,10 @@ public class VRMeshSlicer : MonoBehaviour
             AddPhysics(upperHull);
             AddPhysics(lowerHull);
 
+            // Ignore collision with terrain for sliced parts
+            IgnoreCollisionWithTerrain(upperHull);
+            IgnoreCollisionWithTerrain(lowerHull);
+
             // Schedule destruction of sliced parts
             Destroy(upperHull, destructionDelay);
             Destroy(lowerHull, destructionDelay);
@@ -46,5 +50,23 @@ public class VRMeshSlicer : MonoBehaviour
         MeshCollider meshCollider = obj.AddComponent<MeshCollider>();
         meshCollider.convex = true;
         obj.AddComponent<Rigidbody>();
+    }
+
+    private void IgnoreCollisionWithTerrain(GameObject obj)
+    {
+        // Ignore collision with all objects tagged as "Terrain"
+        Collider objCollider = obj.GetComponent<Collider>();
+        if (objCollider != null)
+        {
+            GameObject[] terrains = GameObject.FindGameObjectsWithTag("Terrain");
+            foreach (GameObject terrain in terrains)
+            {
+                Collider terrainCollider = terrain.GetComponent<Collider>();
+                if (terrainCollider != null)
+                {
+                    Physics.IgnoreCollision(objCollider, terrainCollider);
+                }
+            }
+        }
     }
 }

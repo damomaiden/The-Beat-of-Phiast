@@ -16,8 +16,7 @@ public class SceneChangeAfterTime : MonoBehaviour
         // Log message for debugging
         Debug.Log("Time's up! Changing scene...");
 
-        // Change to the next scene (use the name of the scene you want to load)
-        // Replace "NextScene" with the actual name of your scene
+        // Change to the next scene
         SceneManager.LoadScene("EndScene");
     }
 }
