@@ -6,6 +6,8 @@ public class VRMeshSlicer : MonoBehaviour
     public Transform blade; // Reference to the VR controller's transform (blade)
     public Material crossSectionMaterial; // Material for the sliced surfaces
     public float destructionDelay = 5f; // Time (in seconds) before the sliced pieces are destroyed
+    public GameObject scoreHold; //Connect to score object
+    public ScoreHolder script; //Access the score variables
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,10 @@ public class VRMeshSlicer : MonoBehaviour
     {
         // Perform slicing using EzySlice
         SlicedHull slicedObject = target.Slice(blade.position, blade.up, crossSectionMaterial);
+
+        script = scoreHold.GetComponent<ScoreHolder>(); //Access all variables in Score Holder
+        script.comboMeter = script.comboMeter + 1; //Combo goes up when you hit something. Doesn't go down when you miss a hit yet
+        script.scoreNumber = script.scoreNumber + 1 * script.comboMulti; //Increases score by 1, multiplied by current combo multiplier
 
         if (slicedObject != null)
         {
