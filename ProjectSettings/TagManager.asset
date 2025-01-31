@@ -10,6 +10,7 @@ TagManager:
   - Blade
   - Pot
   - Terrain
+  - MissCounter
   layers:
   - Default
   - TransparentFX
