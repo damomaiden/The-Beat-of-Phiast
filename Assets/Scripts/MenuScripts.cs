@@ -10,6 +10,12 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Environment");
     }
 
+    public void MainMenu()
+    {
+        // Load the game scene (make sure the scene is added in Build Settings)
+        SceneManager.LoadScene("StartScene");
+    }
+
     // Function to quit the game
     public void QuitGame()
     {
