@@ -1019,28 +1019,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 481940533}
-  - component: {fileID: 481940532}
+  - component: {fileID: 481940534}
   m_Layer: 0
   m_Name: PauseSceneUntilReady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &481940532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 481940531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca62d76649bd874e9958f996a25ede9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axe: {fileID: 708599221}
-  hammer: {fileID: 1803506230}
+  m_IsActive: 1
 --- !u!4 &481940533
 Transform:
   m_ObjectHideFlags: 0
@@ -1056,6 +1042,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481940534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481940531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4653ca7c378d8d24689be63fbc8f6ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPause:
+  - {fileID: 958335984}
+  - {fileID: 252651349}
+  - {fileID: 1130697912}
+  - {fileID: 1860941670}
 --- !u!1001 &513176718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2264,17 +2267,20 @@ MonoBehaviour:
   sliceableClips:
   - {fileID: 8300000, guid: 6a3ad02aed278a940a172c7b80859e55, type: 3}
   - {fileID: 8300000, guid: 88f2e49bb12d2904db6f2460c4cac0de, type: 3}
---- !u!114 &708599221 stripped
+--- !u!114 &708599222
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
-  m_PrefabInstance: {fileID: 1014544527}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708599216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: e9957137af0e5e84b8faece2cfd94d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabInteractable: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!1001 &789060525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2801,6 +2807,34 @@ PrefabInstance:
       propertyPath: m_MovementType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 708599222}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponGrabHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204870875280407684, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7090037951020568691, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
       propertyPath: m_Name
       value: 'Axe '
@@ -2863,6 +2897,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7090037951020568691, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
       insertIndex: -1
       addedObject: {fileID: 708599217}
+    - targetCorrespondingSourceObject: {fileID: 7090037951020568691, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 708599222}
   m_SourcePrefab: {fileID: 100100000, guid: 4c55953e58260c34699c182b3cb85827, type: 3}
 --- !u!1001 &1057459988
 PrefabInstance:
@@ -3983,17 +4020,20 @@ MonoBehaviour:
   slicingSpeedThreshold: 1
   scoreHold: {fileID: 1687304043}
   script: {fileID: 1687304044}
---- !u!114 &1803506230 stripped
+--- !u!114 &1803506231
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
-  m_PrefabInstance: {fileID: 2029623488}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803506225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: e9957137af0e5e84b8faece2cfd94d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabInteractable: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!1 &1860941670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,6 +4409,34 @@ PrefabInstance:
       propertyPath: m_MovementType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1803506231}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnGrabbed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponGrabHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789151478647782736, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8400016985485565905, guid: 6eee09e1951326744a158385f4193c08, type: 3}
       propertyPath: m_Name
       value: 'Hammer '
@@ -4391,6 +4459,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8400016985485565905, guid: 6eee09e1951326744a158385f4193c08, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1803506226}
+    - targetCorrespondingSourceObject: {fileID: 8400016985485565905, guid: 6eee09e1951326744a158385f4193c08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1803506231}
   m_SourcePrefab: {fileID: 100100000, guid: 6eee09e1951326744a158385f4193c08, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -4415,6 +4486,6 @@ SceneRoots:
   - {fileID: 23848263}
   - {fileID: 1687304045}
   - {fileID: 1926943656}
-  - {fileID: 481940533}
   - {fileID: 428684870}
   - {fileID: 613829357}
+  - {fileID: 481940533}
