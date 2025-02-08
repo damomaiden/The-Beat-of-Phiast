@@ -11,6 +11,7 @@ TagManager:
   - Pot
   - Terrain
   - MissCounter
+  - Miss
   layers:
   - Default
   - TransparentFX
