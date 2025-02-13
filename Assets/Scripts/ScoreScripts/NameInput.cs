@@ -1,43 +1,55 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
 
 public class NameInput : MonoBehaviour
 {
     [SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
-    [SerializeField] TextMeshPro text; //will write name here
-    [SerializeField] int nameNumber = 10101; //Name is calculated on a scale of 010101 to 262626
-    [SerializeField] int midNumber = 101; //For calculating changes made to the middle number
-    [SerializeField] int smallNumber = 1; //For calculating changes made to the smaller number
+    [SerializeField] TextMeshProUGUI text; //will write name here
+    [SerializeField] int nameNumber; //Name is calculated on a scale of 010101 to 262626
+    [SerializeField] int bigNumber; //For calculating changes made to the big number
+    [SerializeField] int midNumber; //For calculating changes made to the middle number
+    [SerializeField] int smallNumber; //For calculating changes made to the smaller number
+    [SerializeField] string yourName; //Player's name
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        text = GetComponent<TextMeshPro>();
-
+        text = GetComponent<TextMeshProUGUI>();
+        nameNumber = 10101;
+        bigNumber = 10000;
+        midNumber = 100;
+        smallNumber = 1;
     }
 
     public void UpFirst()
     {
         nameNumber = nameNumber + 10000;
+        bigNumber = bigNumber + 10000;
         if(nameNumber >= 270000)
         {
             nameNumber = nameNumber - 250000;
+            bigNumber = bigNumber - 250000;
         }
     }
 
     public void DownFirst()
     {
         nameNumber = nameNumber - 10000;
+        bigNumber = bigNumber - 10000;
         if (nameNumber < 10000)
         {
             nameNumber = nameNumber + 260000;
+            bigNumber = bigNumber + 260000;
         }
     }
 
     public void UpSecond()
     {
         nameNumber = nameNumber + 100;
-        nameNumber = midNumber + 100;
+        midNumber = midNumber + 100;
         if (midNumber >= 2700)
         {
             nameNumber = nameNumber - 2500;
@@ -48,7 +60,7 @@ public class NameInput : MonoBehaviour
     public void DownSecond()
     {
         nameNumber = nameNumber - 100;
-        nameNumber = midNumber - 100;
+        midNumber = midNumber - 100;
         if (midNumber < 100)
         {
             nameNumber = nameNumber + 2600;
@@ -59,7 +71,7 @@ public class NameInput : MonoBehaviour
     public void UpThird()
     {
         nameNumber = nameNumber + 1;
-        nameNumber = smallNumber + 1;
+        smallNumber = smallNumber + 1;
         if (smallNumber >= 27)
         {
             nameNumber = nameNumber - 25;
@@ -70,7 +82,7 @@ public class NameInput : MonoBehaviour
     public void DownThird()
     {
         nameNumber = nameNumber - 1;
-        nameNumber = smallNumber + 1;
+        smallNumber = smallNumber + 1;
         if (smallNumber < 1)
         {
             nameNumber = nameNumber + 26;
@@ -81,6 +93,23 @@ public class NameInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = highScore.playerName.ToString();
+        yourName = GetNameFromNumber(nameNumber); // O_O
+        text.text = yourName.ToString();
+    }
+
+    string GetNameFromNumber(int number) // O_O
+    {
+        // Extract the three parts of the nameNumber: big, mid, small
+        int bigPart = (number / 10000) % 100;
+        int midPart = (number / 100) % 100;
+        int smallPart = number % 100;
+
+        // Convert each part to a letter (1 -> A, 26 -> Z)
+        char bigChar = (char)('A' + (bigPart - 1));
+        char midChar = (char)('A' + (midPart - 1));
+        char smallChar = (char)('A' + (smallPart - 1));
+
+        // Combine the characters into a string
+        return $"{bigChar}{midChar}{smallChar}";
     }
 }

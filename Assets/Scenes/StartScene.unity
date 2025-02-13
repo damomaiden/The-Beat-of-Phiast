@@ -3745,8 +3745,10 @@ MonoBehaviour:
   highScore: {fileID: 11400000, guid: 9af4339722a6fe24d83ae783a3fe0cbc, type: 2}
   text: {fileID: 0}
   nameNumber: 10101
+  bigNumber: 0
   midNumber: 101
   smallNumber: 1
+  yourName: 
 --- !u!114 &1567996246
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: HighScore
   m_EditorClassIdentifier: 
   highScore: 0
-  playerName: 
+  playerName: AAA
+  secondScore: 0
+  secondName: 
+  thirdScore: 0
+  thirdName: 
