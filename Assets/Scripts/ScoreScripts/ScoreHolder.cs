@@ -8,6 +8,7 @@ public class ScoreHolder : MonoBehaviour
     public int comboMulti = 1; //The amount your score is multiplied per cube borken
 
     [SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
+    [SerializeField] NameInput whoAreYou; //Remebers the current player's name
     private int oldHighScore;
     private int oldSecondScore;
     private int oldThirdScore;
@@ -43,17 +44,23 @@ public class ScoreHolder : MonoBehaviour
         if (scoreNumber >= oldHighScore) //If old highscore islower than the current score
         {
             highScore.thirdScore = highScore.secondScore; //the old second place is moved to third
+            highScore.thirdName = highScore.secondName;
             highScore.secondScore = highScore.highScore; //the old highest score is now second
+            highScore.secondName = highScore.playerName;
             highScore.highScore = scoreNumber; //the new highcsore is the current score
+            highScore.playerName = whoAreYou.yourName;
         }
         else if (scoreNumber >= oldSecondScore && scoreNumber <= oldHighScore)
         {
             highScore.thirdScore = highScore.secondScore; //the old second place is moved to third
+            highScore.thirdName = highScore.secondName;
             highScore.secondScore = scoreNumber; //the new second place score replaces the old one
+            highScore.secondName = whoAreYou.yourName;
         }
         else if (scoreNumber >= oldThirdScore && scoreNumber <= oldSecondScore)
         {
             highScore.thirdScore = scoreNumber; //the new third place score replaces the old one
+            highScore.thirdName = whoAreYou.yourName;
         }
     }
 }

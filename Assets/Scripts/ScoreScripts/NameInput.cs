@@ -12,7 +12,7 @@ public class NameInput : MonoBehaviour
     [SerializeField] int bigNumber; //For calculating changes made to the big number
     [SerializeField] int midNumber; //For calculating changes made to the middle number
     [SerializeField] int smallNumber; //For calculating changes made to the smaller number
-    [SerializeField] string yourName; //Player's name
+    public string yourName; //Player's name
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
