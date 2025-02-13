@@ -97,7 +97,7 @@ public class NameInput : MonoBehaviour
         text.text = yourName.ToString();
     }
 
-    string GetNameFromNumber(int number) // O_O
+    string GetNameFromNumber(int number) // It works!
     {
         // Extract the three parts of the nameNumber: big, mid, small
         int bigPart = (number / 10000) % 100;
