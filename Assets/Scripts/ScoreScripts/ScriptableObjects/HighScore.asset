@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec04606c61db7340a1d10a78115f8af, type: 3}
   m_Name: HighScore
   m_EditorClassIdentifier: 
-  highScore: 0
+  highScore: 4
   playerName: AAA
-  secondScore: 0
+  secondScore: 2
   secondName: BBB
-  thirdScore: 0
+  thirdScore: 1
   thirdName: CCC

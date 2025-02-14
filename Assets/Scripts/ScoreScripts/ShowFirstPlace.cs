@@ -15,13 +15,17 @@ public class ShowFirstPlace : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        /*
         first = GetComponent<TextMeshProUGUI>();
         firsts = GetComponent<TextMeshProUGUI>();
         second = GetComponent<TextMeshProUGUI>();
         seconds = GetComponent<TextMeshProUGUI>();
         third = GetComponent<TextMeshProUGUI>();
         thirds = GetComponent<TextMeshProUGUI>();
+        */
     }
+
+
 
     // Update is called once per frame
     void Update()
