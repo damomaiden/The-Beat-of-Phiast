@@ -18,7 +18,7 @@ public class JSON_Highscore : MonoBehaviour
     void Start()
     {
         // Example of loading JSON from a file
-        string json = System.IO.File.ReadAllText("scoreData.json");
+        string json = System.IO.File.ReadAllText("JSON_Highscore.json");
         scoreData = JsonUtility.FromJson<ScoreData>(json);
 
         // Example of saving JSON to a file
