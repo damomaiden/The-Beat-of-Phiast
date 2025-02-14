@@ -2280,7 +2280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1001 &789060525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3699,6 +3698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687304045}
   - component: {fileID: 1687304044}
+  - component: {fileID: 1687304046}
   m_Layer: 0
   m_Name: ScoreHolder
   m_TagString: Untagged
@@ -3721,7 +3721,8 @@ MonoBehaviour:
   scoreNumber: 0
   comboMeter: 0
   comboMulti: 1
-  highScore: {fileID: 11400000, guid: 9af4339722a6fe24d83ae783a3fe0cbc, type: 2}
+  highScore: {fileID: 1687304046}
+  whoAreYou: {fileID: 0}
 --- !u!4 &1687304045
 Transform:
   m_ObjectHideFlags: 0
@@ -3737,6 +3738,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1687304046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687304043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff4139e8e5fbe9469a4bf3e08839ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreData:
+    highScore: 4
+    playerName: JOE
+    secondScore: 2
+    secondName: OOP
+    thirdScore: 1
+    thirdName: EGG
 --- !u!1 &1697019279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4033,7 +4053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1 &1860941670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,7 +4190,7 @@ PrefabInstance:
       objectReference: {fileID: 1687304044}
     - target: {fileID: 1957359508550992044, guid: 5b7ae053af8b6124f8614cb2f3134163, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2041146605981655509, guid: 5b7ae053af8b6124f8614cb2f3134163, type: 3}
       propertyPath: m_Name

@@ -3,7 +3,7 @@ using TMPro;
 
 public class ShowFirstPlace : MonoBehaviour
 {
-    [SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
+    [SerializeField] JSON_Highscore highScore; //Remebers the highest score from all previous play sessions
     [SerializeField] TextMeshProUGUI first; //will show first place name here
     [SerializeField] TextMeshProUGUI firsts; //will show first place score here
     [SerializeField] TextMeshProUGUI second; //will show second place name here
@@ -30,11 +30,11 @@ public class ShowFirstPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        first.text = highScore.playerName.ToString();
-        firsts.text = highScore.highScore.ToString();
-        second.text = highScore.secondName.ToString();
-        seconds.text = highScore.secondScore.ToString();
-        third.text = highScore.thirdName.ToString();
-        thirds.text = highScore.thirdScore.ToString();
+        first.text = highScore.scoreData.playerName.ToString();
+        firsts.text = highScore.scoreData.highScore.ToString();
+        second.text = highScore.scoreData.secondName.ToString();
+        seconds.text = highScore.scoreData.secondScore.ToString();
+        third.text = highScore.scoreData.thirdName.ToString();
+        thirds.text = highScore.scoreData.thirdScore.ToString();
     }
 }

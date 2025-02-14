@@ -3249,6 +3249,7 @@ GameObject:
   - component: {fileID: 1353588373}
   - component: {fileID: 1353588372}
   - component: {fileID: 1353588378}
+  - component: {fileID: 1353588379}
   m_Layer: 5
   m_Name: EndHighScoreMenu
   m_TagString: Untagged
@@ -3391,13 +3392,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2baa54541a4d4944da8e2ca9267791eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScore: {fileID: 11400000, guid: 9af4339722a6fe24d83ae783a3fe0cbc, type: 2}
+  highScore: {fileID: 1353588379}
   first: {fileID: 330136858}
   firsts: {fileID: 1024669812}
   second: {fileID: 1670403221}
   seconds: {fileID: 97008480}
   third: {fileID: 1443549540}
   thirds: {fileID: 687264989}
+--- !u!114 &1353588379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353588371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff4139e8e5fbe9469a4bf3e08839ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreData:
+    highScore: 4
+    playerName: JOE
+    secondScore: 2
+    secondName: EGG
+    thirdScore: 1
+    thirdName: OOP
 --- !u!1 &1364422640
 GameObject:
   m_ObjectHideFlags: 0

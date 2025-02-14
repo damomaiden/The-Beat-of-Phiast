@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 public class highscoreUpdater : MonoBehaviour //This script controls the part of the UI that shows the highest score of all playthroughs recorded
 {
-    [SerializeField] HighScore_SO highScore; //access highscores
+    [SerializeField] JSON_Highscore highScore; //access highscores
     [SerializeField] TextMeshPro text; //will write highest score to here
     
     [SerializeField] TextMeshPro secondtext; //will write 2nd highest score to here
@@ -20,8 +20,8 @@ public class highscoreUpdater : MonoBehaviour //This script controls the part of
     // Update is called once per frame
     void Update() //writing the highscores
     {
-        text.text = highScore.highScore.ToString() ;
-        secondtext.text = highScore.secondScore.ToString();
-        thirdtext.text = highScore.thirdScore.ToString();
+        text.text = highScore.scoreData.highScore.ToString() ;
+        secondtext.text = highScore.scoreData.secondScore.ToString();
+        thirdtext.text = highScore.scoreData.thirdScore.ToString();
     }
 }
