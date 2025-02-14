@@ -7,7 +7,8 @@ public class ScoreHolder : MonoBehaviour
     public int comboMeter = 0; //The amount of cubes you've hit consecutively
     public int comboMulti = 1; //The amount your score is multiplied per cube borken
 
-    [SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
+    //[SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
+    [SerializeField] JSON_Highscore highScore; //Remebers the highest score from all previous play sessions
     [SerializeField] NameInput whoAreYou; //Remebers the current player's name
     private int oldHighScore;
     private int oldSecondScore;
@@ -16,11 +17,11 @@ public class ScoreHolder : MonoBehaviour
     void Start()
     {
         //This script is accessed by the Axe's "ProceduralMeshSlicer" script,
-        oldHighScore = highScore.highScore;//the previous highest score is the highscore
-        oldSecondScore = highScore.secondScore;//the previous 2nd highest score is the second highest score
-        oldThirdScore = highScore.thirdScore;//the previous 3rd highest score is the third highest score
+        oldHighScore = highScore.scoreData.highScore;//the previous highest score is the highscore
+        oldSecondScore = highScore.scoreData.secondScore;//the previous 2nd highest score is the second highest score
+        oldThirdScore = highScore.scoreData.thirdScore;//the previous 3rd highest score is the third highest score
     }
-
+    
     // Update is called once per frame
     void Update()//Controls the combo multiplier
     {
@@ -40,27 +41,27 @@ public class ScoreHolder : MonoBehaviour
         {
             comboMulti = 8; //score multiplier is 8
         }
-
+    
         if (scoreNumber >= oldHighScore) //If old highscore islower than the current score
         {
-            highScore.thirdScore = highScore.secondScore; //the old second place is moved to third
-            highScore.thirdName = highScore.secondName;
-            highScore.secondScore = highScore.highScore; //the old highest score is now second
-            highScore.secondName = highScore.playerName;
-            highScore.highScore = scoreNumber; //the new highcsore is the current score
-            highScore.playerName = whoAreYou.yourName;
+            highScore.scoreData.thirdScore = highScore.scoreData.secondScore; //the old second place is moved to third
+            highScore.scoreData.thirdName = highScore.scoreData.secondName;
+            highScore.scoreData.secondScore = highScore.scoreData.highScore; //the old highest score is now second
+            highScore.scoreData.secondName = highScore.scoreData.playerName;
+            highScore.scoreData.highScore = scoreNumber; //the new highcsore is the current score
+            highScore.scoreData.playerName = whoAreYou.yourName;
         }
         else if (scoreNumber >= oldSecondScore && scoreNumber <= oldHighScore)
         {
-            highScore.thirdScore = highScore.secondScore; //the old second place is moved to third
-            highScore.thirdName = highScore.secondName;
-            highScore.secondScore = scoreNumber; //the new second place score replaces the old one
-            highScore.secondName = whoAreYou.yourName;
+            highScore.scoreData.thirdScore = highScore.scoreData.secondScore; //the old second place is moved to third
+            highScore.scoreData.thirdName = highScore.scoreData.secondName;
+            highScore.scoreData.secondScore = scoreNumber; //the new second place score replaces the old one
+            highScore.scoreData.secondName = whoAreYou.yourName;
         }
         else if (scoreNumber >= oldThirdScore && scoreNumber <= oldSecondScore)
         {
-            highScore.thirdScore = scoreNumber; //the new third place score replaces the old one
-            highScore.thirdName = whoAreYou.yourName;
+            highScore.scoreData.thirdScore = scoreNumber; //the new third place score replaces the old one
+            highScore.scoreData.thirdName = whoAreYou.yourName;
         }
     }
 }

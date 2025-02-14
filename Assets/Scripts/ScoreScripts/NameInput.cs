@@ -6,7 +6,7 @@ using System.Numerics;
 
 public class NameInput : MonoBehaviour
 {
-    [SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
+    //[SerializeField] JSON_Highscore highScore;
     [SerializeField] TextMeshProUGUI text; //will write name here
     [SerializeField] int nameNumber; //Name is calculated on a scale of 010101 to 262626
     [SerializeField] int bigNumber; //For calculating changes made to the big number
