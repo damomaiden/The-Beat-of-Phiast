@@ -2280,7 +2280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1001 &789060525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3752,12 +3751,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreData:
-    highScore: 0
-    playerName: 
-    secondScore: 0
-    secondName: 
-    thirdScore: 0
-    thirdName: 
+    highScore: 4
+    playerName: JOE
+    secondScore: 2
+    secondName: OOP
+    thirdScore: 1
+    thirdName: EGG
 --- !u!1 &1697019279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,7 +4053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabInteractable: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!1 &1860941670
 GameObject:
   m_ObjectHideFlags: 0
