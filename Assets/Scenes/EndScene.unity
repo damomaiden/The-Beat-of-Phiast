@@ -3256,7 +3256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1353588372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4102,6 +4102,8 @@ MonoBehaviour:
   soundEffect1: {fileID: 1855950288}
   soundEffect2: {fileID: 1255618255}
   backgroundMusic: {fileID: 1587743849}
+  endGameCanvas: {fileID: 1353588376}
+  endGameDelay: 3
 --- !u!65 &1479324515
 BoxCollider:
   m_ObjectHideFlags: 0

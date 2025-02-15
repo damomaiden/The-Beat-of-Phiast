@@ -1,25 +1,36 @@
 using UnityEngine;
-//using UnityEngine.SceneManagement; // For scene management if needed
+using System.Collections;
 
 public class EndGameOnHit : MonoBehaviour
 {
-    public AudioSource soundEffect1; // Assign in Inspector
-    public AudioSource soundEffect2; // Assign in Inspector
-    public AudioSource backgroundMusic; // Assign in Inspector
+    public AudioSource soundEffect1;
+    public AudioSource soundEffect2;
+    public AudioSource backgroundMusic;
+    public Canvas endGameCanvas; // Reference to your end game canvas
+    public float endGameDelay = 3f; // Adjustable delay in seconds
+
+    private void Start()
+    {
+        // Ensure the canvas starts invisible
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.enabled = false;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         // Check if the object that entered the collider is the pot
         if (other.CompareTag("Pot"))
         {
-            EndGame();
+            StartCoroutine(EndGameSequence());
         }
     }
 
-    private void EndGame()
+    private IEnumerator EndGameSequence()
     {
         // Log the end-game event for debugging
-        Debug.Log("The pot hit the target! Game Over.");
+        Debug.Log("The pot hit the target! Game Over sequence starting...");
 
         // Pause background music
         if (backgroundMusic != null) backgroundMusic.Pause();
@@ -28,13 +39,17 @@ public class EndGameOnHit : MonoBehaviour
         if (soundEffect1 != null) soundEffect1.Play();
         if (soundEffect2 != null) soundEffect2.Play();
 
-        // Stop gameplay by pausing time
-        Time.timeScale = 0;
+        // Wait for the specified delay
+        yield return new WaitForSeconds(endGameDelay);
 
-        // Optionally reload the current scene to reset the game
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        // Optionally quit the application (for builds only)
-        //Application.Quit();
+        // Show the end game canvas
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("End Game Canvas not assigned in the inspector!");
+        }
     }
 }
