@@ -128,6 +128,7 @@ MonoBehaviour:
   moveSpeed: 4
   maxFadeDistance: 3
   minAlpha: 0.3
+  rotationSpeed: {x: 90, y: 90, z: 90}
 --- !u!54 &2503982112740432522
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -177,6 +177,7 @@ MonoBehaviour:
   moveSpeed: 4
   maxFadeDistance: 3
   minAlpha: 0.3
+  rotationSpeed: {x: 90, y: 90, z: 90}
 --- !u!64 &1033695923811308603
 MeshCollider:
   m_ObjectHideFlags: 0
