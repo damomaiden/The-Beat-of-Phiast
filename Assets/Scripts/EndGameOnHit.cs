@@ -8,6 +8,8 @@ public class EndGameOnHit : MonoBehaviour
     public AudioSource backgroundMusic;
     public Canvas endGameCanvas; // Reference to your end game canvas
     public Animator characterAnimator; // Reference to the Animator component of your character
+    public GameObject pot; // Reference to the pot on An Phiast's head
+    public GameObject originalPot; // Reference to the original pot
     public float endGameDelay = 3f; // Adjustable delay in seconds
 
     private void Start()
@@ -18,10 +20,22 @@ public class EndGameOnHit : MonoBehaviour
             endGameCanvas.enabled = false;
         }
 
+        // Set the pot on An Phiast's head to be invisible on spawn
+        if (pot != null)
+        {
+            pot.SetActive(false);
+        }
+
+        // Set the original pot to be visible on spawn
+        if (originalPot != null)
+        {
+            originalPot.SetActive(true);
+        }
+
         // Set the "isCrying" parameter to true to start the crying animation after idle
         if (characterAnimator != null)
         {
-            characterAnimator.SetBool("IsCrying", true);
+            characterAnimator.SetBool("isCrying", true);
         }
     }
 
@@ -38,6 +52,18 @@ public class EndGameOnHit : MonoBehaviour
     {
         // Log the end-game event for debugging
         Debug.Log("The pot hit the target! Game Over sequence starting...");
+
+        // Make the pot on An Phiast's head visible when it hits the collider
+        if (pot != null)
+        {
+            pot.SetActive(true);
+        }
+
+        // Make the original pot invisible when the end game sequence begins
+        if (originalPot != null)
+        {
+            originalPot.SetActive(false);
+        }
 
         // Pause background music
         if (backgroundMusic != null) backgroundMusic.Pause();
