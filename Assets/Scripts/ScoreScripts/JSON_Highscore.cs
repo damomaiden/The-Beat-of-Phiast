@@ -3,19 +3,19 @@ using UnityEngine;
 [System.Serializable]
 public class ScoreData
 {
-    public int highScore = 4;
-    public string playerName = "JOE";
-    public int secondScore = 2;
-    public string secondName = "EGG";
-    public int thirdScore = 1;
-    public string thirdName = "OOP";
+    public int highScore = 0;
+    public string playerName = "   ";
+    public int secondScore = 0;
+    public string secondName = "   ";
+    public int thirdScore = 0;
+    public string thirdName = "   ";
 }
 
 public class JSON_Highscore : MonoBehaviour
 {
     public ScoreData scoreData;
 
-    void Start()
+    public void Start()
     {
         // Example of loading JSON from a file
         string json = System.IO.File.ReadAllText("JSON_Highscore.json");

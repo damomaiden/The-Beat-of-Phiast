@@ -6147,12 +6147,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreData:
-    highScore: 4
-    playerName: JOE
-    secondScore: 2
-    secondName: OOP
-    thirdScore: 1
-    thirdName: EGG
+    highScore: 0
+    playerName: 
+    secondScore: 0
+    secondName: 
+    thirdScore: 0
+    thirdName: 
 --- !u!1 &1697019279
 GameObject:
   m_ObjectHideFlags: 0
