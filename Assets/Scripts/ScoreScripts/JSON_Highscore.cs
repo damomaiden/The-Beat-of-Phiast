@@ -3,12 +3,12 @@ using UnityEngine;
 [System.Serializable]
 public class ScoreData
 {
-    public int highScore = 0;
-    public string playerName = "   ";
-    public int secondScore = 0;
-    public string secondName = "   ";
-    public int thirdScore = 0;
-    public string thirdName = "   ";
+    public int highScore;
+    public string playerName;
+    public int secondScore;
+    public string secondName;
+    public int thirdScore;
+    public string thirdName;
 }
 
 public class JSON_Highscore : MonoBehaviour
