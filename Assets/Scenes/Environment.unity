@@ -4644,7 +4644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b935d18490fbc5418e874f04b6d339c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplishSplash: {fileID: 0}
+  SplishSplash: {fileID: 1584515085}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6031,7 +6031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1584515086
 ParticleSystemRenderer:
   serializedVersion: 6
