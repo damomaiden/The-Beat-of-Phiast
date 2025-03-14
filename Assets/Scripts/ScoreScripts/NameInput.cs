@@ -13,6 +13,7 @@ public class NameInput : MonoBehaviour
     [SerializeField] int midNumber; //For calculating changes made to the middle number
     [SerializeField] int smallNumber; //For calculating changes made to the smaller number
     public string yourName; //Player's name
+    public Name_SO identity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -95,6 +96,7 @@ public class NameInput : MonoBehaviour
     {
         yourName = GetNameFromNumber(nameNumber); // O_O
         text.text = yourName.ToString();
+        identity.CurrentPlayerName = yourName;
     }
 
     string GetNameFromNumber(int number) // It works!

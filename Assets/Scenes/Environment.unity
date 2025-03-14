@@ -1054,7 +1054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481940533
 Transform:
   m_ObjectHideFlags: 0
@@ -11084,7 +11084,7 @@ MonoBehaviour:
   comboMeter: 0
   comboMulti: 1
   highScore: {fileID: 1687304046}
-  whoAreYou: {fileID: 0}
+  whoAreYou: {fileID: 11400000, guid: 008024f7ea6962a43adabd10c78e70f9, type: 2}
 --- !u!4 &1687304045
 Transform:
   m_ObjectHideFlags: 0

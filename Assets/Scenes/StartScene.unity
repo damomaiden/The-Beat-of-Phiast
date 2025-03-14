@@ -6212,6 +6212,7 @@ MonoBehaviour:
   midNumber: 101
   smallNumber: 1
   yourName: 
+  identity: {fileID: 11400000, guid: 008024f7ea6962a43adabd10c78e70f9, type: 2}
 --- !u!114 &1567996246
 MonoBehaviour:
   m_ObjectHideFlags: 0

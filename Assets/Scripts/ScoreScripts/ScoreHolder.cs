@@ -9,7 +9,7 @@ public class ScoreHolder : MonoBehaviour
 
     //[SerializeField] HighScore_SO highScore; //Remebers the highest score from all previous play sessions
     [SerializeField] JSON_Highscore highScore; //Remebers the highest score from all previous play sessions
-    [SerializeField] NameInput whoAreYou; //Remebers the current player's name
+    [SerializeField] Name_SO whoAreYou; //Remebers the current player's name
     private int oldHighScore;
     private int oldSecondScore;
     private int oldThirdScore;
@@ -49,19 +49,19 @@ public class ScoreHolder : MonoBehaviour
             highScore.scoreData.secondScore = highScore.scoreData.highScore; //the old highest score is now second
             highScore.scoreData.secondName = highScore.scoreData.playerName;
             highScore.scoreData.highScore = scoreNumber; //the new highcsore is the current score
-            highScore.scoreData.playerName = whoAreYou.yourName;
+            highScore.scoreData.playerName = whoAreYou.CurrentPlayerName;
         }
         else if (scoreNumber >= oldSecondScore && scoreNumber <= oldHighScore)
         {
             highScore.scoreData.thirdScore = highScore.scoreData.secondScore; //the old second place is moved to third
             highScore.scoreData.thirdName = highScore.scoreData.secondName;
             highScore.scoreData.secondScore = scoreNumber; //the new second place score replaces the old one
-            highScore.scoreData.secondName = whoAreYou.yourName;
+            highScore.scoreData.secondName = whoAreYou.CurrentPlayerName;
         }
         else if (scoreNumber >= oldThirdScore && scoreNumber <= oldSecondScore)
         {
             highScore.scoreData.thirdScore = scoreNumber; //the new third place score replaces the old one
-            highScore.scoreData.thirdName = whoAreYou.yourName;
+            highScore.scoreData.thirdName = whoAreYou.CurrentPlayerName;
         }
     }
 }
