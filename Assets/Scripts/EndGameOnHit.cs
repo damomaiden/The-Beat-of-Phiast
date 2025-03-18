@@ -17,7 +17,7 @@ public class EndGameOnHit : MonoBehaviour
         // Ensure the canvas starts invisible
         if (endGameCanvas != null)
         {
-            endGameCanvas.enabled = false;
+            endGameCanvas.gameObject.SetActive(false);
         }
 
         // Set the pot on An Phiast's head to be invisible on spawn
@@ -30,12 +30,6 @@ public class EndGameOnHit : MonoBehaviour
         if (originalPot != null)
         {
             originalPot.SetActive(true);
-        }
-
-        // Set the "isCrying" parameter to true to start the crying animation after idle
-        if (characterAnimator != null)
-        {
-            characterAnimator.SetBool("isCrying", true);
         }
     }
 
@@ -50,7 +44,11 @@ public class EndGameOnHit : MonoBehaviour
 
     private IEnumerator EndGameSequence()
     {
-        // Log the end-game event for debugging
+        if (this == null || !this.gameObject.activeInHierarchy)
+        {
+            yield break; // Exit if the GameObject is destroyed or inactive
+        }
+
         Debug.Log("The pot hit the target! Game Over sequence starting...");
 
         // Make the pot on An Phiast's head visible when it hits the collider
@@ -67,10 +65,14 @@ public class EndGameOnHit : MonoBehaviour
 
         // Pause background music
         if (backgroundMusic != null) backgroundMusic.Pause();
+        else Debug.LogWarning("Background Music not assigned in the inspector!");
 
         // Play both sound effects
         if (soundEffect1 != null) soundEffect1.Play();
+        else Debug.LogWarning("Sound Effect 1 not assigned in the inspector!");
+
         if (soundEffect2 != null) soundEffect2.Play();
+        else Debug.LogWarning("Sound Effect 2 not assigned in the inspector!");
 
         // Wait for the specified delay before showing the end game canvas
         yield return new WaitForSeconds(endGameDelay);
@@ -80,11 +82,15 @@ public class EndGameOnHit : MonoBehaviour
         {
             characterAnimator.SetTrigger("Defeated");
         }
+        else
+        {
+            Debug.LogWarning("Character Animator not assigned in the inspector!");
+        }
 
         // Show the end game canvas
         if (endGameCanvas != null)
         {
-            endGameCanvas.enabled = true;
+            endGameCanvas.gameObject.SetActive(true);
         }
         else
         {

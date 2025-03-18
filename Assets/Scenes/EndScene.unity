@@ -4894,7 +4894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2baa54541a4d4944da8e2ca9267791eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScore: {fileID: 1353588379}
   first: {fileID: 330136858}
   firsts: {fileID: 1024669812}
   second: {fileID: 1670403221}
@@ -4908,7 +4907,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353588371}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ff4139e8e5fbe9469a4bf3e08839ab0, type: 3}
   m_Name: 
