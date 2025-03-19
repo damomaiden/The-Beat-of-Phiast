@@ -11,6 +11,9 @@ public class ScoreHolder : MonoBehaviour
     private int oldHighScore;
     private int oldSecondScore;
     private int oldThirdScore;
+    private string oldHighName;
+    private string oldSecondName;
+    private string oldThirdName;
 
     private HighScoreManager highScoreManager;
 
@@ -27,8 +30,11 @@ public class ScoreHolder : MonoBehaviour
 
         // Initialize high scores
         oldHighScore = highScoreManager.scoreData.highScore;
+        oldHighName = highScoreManager.scoreData.playerName;
         oldSecondScore = highScoreManager.scoreData.secondScore;
+        oldSecondName = highScoreManager.scoreData.secondName;
         oldThirdScore = highScoreManager.scoreData.thirdScore;
+        oldThirdName = highScoreManager.scoreData.thirdName;
     }
 
     void Update()
@@ -52,27 +58,30 @@ public class ScoreHolder : MonoBehaviour
         }
 
         // Update high scores if necessary
-        if (scoreNumber >= oldHighScore)
+        if (scoreNumber >= oldHighScore) //1st place
         {
-            highScoreManager.scoreData.thirdScore = highScoreManager.scoreData.secondScore;
-            highScoreManager.scoreData.thirdName = highScoreManager.scoreData.secondName;
-            highScoreManager.scoreData.secondScore = highScoreManager.scoreData.highScore;
-            highScoreManager.scoreData.secondName = highScoreManager.scoreData.playerName;
+            highScoreManager.scoreData.thirdScore = oldSecondScore;
+            highScoreManager.scoreData.thirdName = oldSecondName;
+
+            highScoreManager.scoreData.secondScore = oldHighScore;
+            highScoreManager.scoreData.secondName = oldHighName;
+
             highScoreManager.scoreData.highScore = scoreNumber;
             highScoreManager.scoreData.playerName = whoAreYou.CurrentPlayerName;
 
             highScoreManager.SaveScores(); // Save updated scores
         }
-        else if (scoreNumber >= oldSecondScore && scoreNumber <= oldHighScore)
+        else if (scoreNumber >= oldSecondScore && scoreNumber <= oldHighScore) //2nd place
         {
-            highScoreManager.scoreData.thirdScore = highScoreManager.scoreData.secondScore;
-            highScoreManager.scoreData.thirdName = highScoreManager.scoreData.secondName;
+            highScoreManager.scoreData.thirdScore = oldSecondScore;
+            highScoreManager.scoreData.thirdName = oldSecondName;
+
             highScoreManager.scoreData.secondScore = scoreNumber;
             highScoreManager.scoreData.secondName = whoAreYou.CurrentPlayerName;
 
             highScoreManager.SaveScores(); // Save updated scores
         }
-        else if (scoreNumber >= oldThirdScore && scoreNumber <= oldSecondScore)
+        else if (scoreNumber >= oldThirdScore && scoreNumber <= oldSecondScore) //3rd place
         {
             highScoreManager.scoreData.thirdScore = scoreNumber;
             highScoreManager.scoreData.thirdName = whoAreYou.CurrentPlayerName;
