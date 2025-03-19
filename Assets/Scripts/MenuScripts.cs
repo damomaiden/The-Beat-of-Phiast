@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] GameObject theEndMenu;
+
     // Function to start the game
     public void StartGame()
     {
@@ -13,6 +15,7 @@ public class MenuController : MonoBehaviour
     public void MainMenu()
     {
         // Load the game scene (make sure the scene is added in Build Settings)
+        theEndMenu.SetActive(false);
         SceneManager.LoadScene("StartScene");
     }
 
