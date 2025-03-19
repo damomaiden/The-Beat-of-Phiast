@@ -4790,7 +4790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f259f82f4cc4b244ab3de11ecb068bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theEndMenu: {fileID: 0}
+  theEndMenu: {fileID: 1353588376}
 --- !u!114 &1353588374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5582,6 +5582,7 @@ MonoBehaviour:
   soundEffect2: {fileID: 1255618255}
   backgroundMusic: {fileID: 1587743849}
   endGameCanvas: {fileID: 1353588376}
+  endGame: {fileID: 1353588371}
   characterAnimator: {fileID: 1826129109}
   pot: {fileID: 1400647961}
   originalPot: {fileID: 1689500488}

@@ -7,6 +7,7 @@ public class EndGameOnHit : MonoBehaviour
     public AudioSource soundEffect2;
     public AudioSource backgroundMusic;
     public Canvas endGameCanvas; // Reference to your end game canvas
+    public GameObject endGame; // Reference to your end game canvas
     public Animator characterAnimator; // Reference to the Animator component of your character
     public GameObject pot; // Reference to the pot on An Phiast's head
     public GameObject originalPot; // Reference to the original pot
@@ -91,6 +92,7 @@ public class EndGameOnHit : MonoBehaviour
         if (endGameCanvas != null)
         {
             endGameCanvas.gameObject.SetActive(true);
+            endGame.SetActive(true);
         }
         else
         {
